@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <!-- Mirrored from www.nmenos1.xyz/public/expo/expo/2 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Jul 2022 01:24:03 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="BarcuEstilos.css" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="../../assets/nmenos1/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var recargando = false;
+        var alturaMapa = $('#mapanav').height();
+        var htmlMapa =
+          '<span class="gapbetween" /><span class="ana">* <i></i><br />2020<br />Ana Montenegro</span><span class="debora"> * <i>BLM</i><br />2020<br />Débora Silva</span><span class="julieta"> * <i>Mapeo Colectivo</i><br />2019<br />Julieta Gil/Concepción  Huerta/Livia Radwanski</span><span class="moises"> * <em>Neltokoni in Cuicatl (Fragmento)</em><br />2020<br />Moisés Horta Valenzuela</span><span class="biarritz"> * <em>No hay descubrimiento</em><br />2020<br />biarritzzz</span><span class="surabhi"> * <em>Awoke</em><br />2018<br />Surabhi Saraf</span><span class="jose"> * <em>Anuncios en Futura</em><br />2020<br />Jose Ruíz</span><span class="madero"> * <em>Aquello que...</em><br />2020<br />Maria Angélica Madero</span><span class="wimpy"> * <em>Scrotum Humanum</em><br />2020<br />Miguel Ángel Salazar y Carlos Iván Hernández</span><span class="gabriella"> * <em>Assimilation</em><br />2019<br />Gabriella Torres-Ferrer</span>';
+
+        $('#lnk-ver-mapa').click(function (event) {
+          $('#mapanav').fadeIn();
+
+          event.preventDefault();
+        });
+
+        $('#mapanav').click(function (event) {
+          $('#mapanav').fadeOut();
+
+          event.preventDefault();
+        });
+
+        $(window).scroll(function () {
+          var $this = $(this);
+          var height = this.scrollHeight - $this.height(); // Get the height of the div
+          var scroll = $this.scrollTop(); // Get the vertical scroll position
+          //console.log( 'height: ' + height + ' - scroll: ' + scroll + ' - $(document).height(): ' + $(document).height() + ' $(window).height(): ' + $(window).height() );
+          if (recargando) console.log('Esta recargando....');
+
+          var isScrolledToEnd =
+            scroll + $(window).height() + 5 >= $(document).height();
+
+          if (isScrolledToEnd && !recargando) {
+            console.log('llego al final !!!!');
+            //$('html, body').animate( { scrollTop : 0 }, 800 );
+            recargando = true;
+            var current = $(window).scrollTop();
+            $(window).scrollTop(current);
+            $.get('/public/expo/content/2', function (data) {
+              console.log(typeof data); // string
+              $('.contenedorp').append(data);
+              $('#mapanav').append(htmlMapa);
+              var hantes = $('#mapanav').height();
+              console.log('Altura antes: ' + $('#mapanav').height());
+              $('#mapanav').css('height', hantes * 1.1);
+              console.log('Altura despues: ' + $('#mapanav').height() * 1.05);
+              console.log('Altura documento: ' + $(document).height());
+              console.log('Altura body: ' + $('body').height());
+              var hbody = $('body').height();
+              $('#mapanav').css('height', hbody * 1.1);
+              isScrolledToEnd = false;
+              recargando = false;
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="titulo">
+      <h1>9:16</h1>
+    </div>
+
+    <div class="mapa">
+      <h2><a id="lnk-ver-mapa" href="#">Ver Mapa</a></h2>
+      <div id="mapanav">
+        <span class="ana"> * <i></i><br />2020<br />Ana Montenegro </span>
+        <span class="debora"> * <i>BLM</i><br />2020<br />Débora Silva </span>
+        <span class="julieta">
+          * <i>Mapeo Colectivo</i><br />2019<br />Julieta Gil/Concepción
+          Huerta/Livia Radwanski
+        </span>
+        <span class="moises">
+          * <em>Neltokoni in Cuicatl (Fragmento)</em><br />2020<br />Moisés
+          Horta Valenzuela
+        </span>
+        <span class="biarritz">
+          * <em>No hay descubrimiento</em><br />2020<br />biarritzzz
+        </span>
+        <span class="surabhi">
+          * <em>Awoke</em><br />2018<br />Surabhi Saraf
+        </span>
+        <span class="jose">
+          * <em>Anuncios en Futura</em><br />2020<br />Jose Ruíz
+        </span>
+        <span class="madero">
+          * <em>Aquello que...</em><br />2020<br />Maria Angélica Madero
+        </span>
+        <span class="wimpy">
+          * <em>Scrotum Humanum</em><br />2020<br />Miguel Ángel Salazar y
+          Carlos Iván Hernández
+        </span>
+        <span class="gabriella">
+          * <em>Assimilation</em><br />2019<br />Gabriella Torres-Ferrer
+        </span>
+      </div>
+    </div>
+
+    <div class="contenedorp">
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+        </head>
+        <body>
+          <!--
+  		<div id="montenegro" style="width: 100%; height: 100%; z-index: 1000; text-align: center">
+  		</div>
+      -->
+          <span id="CuadroTexto">
+            <p>
+              Las narrativas chocan, se colisionan, estallan unas con otras en
+              el espacio idealizado, infinito, desmaterializado del internet. La
+              violencia persiste, s&oacute;lo que en forma de hackeo, de
+              software con acceso libre al cuerpo, de ultravirus que instaura
+              patrones y modos de vida cada vez m&aacute;s convencionales y
+              estandarizados. As&iacute;, el cuerpo performa al algoritmo,
+              aconduct&aacute;ndose y someti&eacute;ndose a los nuevos
+              est&aacute;ndares o "la nueva normalidad", de un capitalismo
+              decadente que sobrevive a trav&eacute;s de monstruos
+              tecnol&oacute;gicos globales.
+            </p>
+            <br />
+            <p>
+              <em><strong>9:16</strong></em> es una acumulaci&oacute;n y un
+              reflejo de discursos autoritarios y tecnocr&aacute;ticos, de
+              neocolonialismos y neo-violencias que habitan el internet y
+              permean los cuerpos en frente de la pantalla. Esta
+              intervenci&oacute;n en el espacio p&uacute;blico, que proyecta el
+              trabajo de 10 artistas, en la pantalla vertical del estadio el
+              Camp&iacute;n refleja nuestras estructuras jer&aacute;rquicas.
+              Esta acumulaci&oacute;n caprichosa, se pregunta por las
+              procesiones interiores, las guerras cibern&eacute;ticas
+              individuales, las segmentaciones cada vez m&aacute;s disgregantes
+              del algoritmo, las noticias (falsas) del d&iacute;a y, sobre todo,
+              lo que queda por fuera de estas categor&iacute;as.
+            </p>
+          </span>
+
+          <span class="obras">
+            <div id="cero">
+              <video
+                id="cero0"
+                preload="auto"
+                height="640"
+                autoplay
+                loop
+                controls
+              >
+                <source src="public/Ana_Montenegro.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div id="uno">
+              <video id="uno1" preload="auto" width="360" height="640" controls>
+                <source src="public/BLM_9-16.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div id="dos">
+              <!-- <video id="dos2" preload="auto" width="960" controls>
+                <source
+                  src="public/MapeoColectivo_ConAudio.mp4"
+                  type="video/mp4"
+                />
+              </video> -->
+
+              <iframe
+                id="ifrm2"
+                class="mbr-embedded-video"
+                src="https://player.vimeo.com/video/467516055"
+                frameborder="0"
+                allowfullscreen=""
+              >
+              </iframe>
+            </div>
+
+            <video id="tres" preload="auto" width="360" controls>
+              <source src="public/Moisessonido.mp4" type="video/mp4" />
+            </video>
+
+            <video id="cuatro" preload="auto" width="360" controls>
+              <source src="public/biarritz.mp4" type="video/mp4" />
+            </video>
+            <video id="cinco" preload="auto" width="960" autoplay controls>
+              <source src="public/Surabhi_web.mp4" type="video/mp4" />
+            </video>
+            <video
+              id="seis"
+              preload="auto"
+              width="360"
+              height="640"
+              controls
+              autoplay
+            >
+              <source src="public/ANUNCIOS EN FUTURA 1.mp4" type="video/mp4" />
+            </video>
+            <video id="siete" preload="auto" width="360" height="640" controls>
+              <source src="public/ANUNCIOS EN FUTURA 2.mp4" type="video/mp4" />
+            </video>
+            <video id="ocho" preload="auto" width="360" height="640" controls>
+              <source src="public/ANUNCIOS EN FUTURA 3.mp4" type="video/mp4" />
+            </video>
+            <video id="nueve" preload="auto" width="360" height="auto" controls>
+              <source src="public/ANUNCIOS EN FUTURA 4.mp4" type="video/mp4" />
+            </video>
+            <video id="diez" preload="auto" width="360" height="auto" controls>
+              <source src="public/ANUNCIOS EN FUTURA 5.mp4" type="video/mp4" />
+            </video>
+            <!-- <video id="once" preload="auto" width="480" autoplay controls>
+              <source
+                src="../../../storage/app/public/upload/vid/MAMadero.mp4"
+                type="video/mp4"
+              />
+            </video> -->
+            <video id="doce" preload="auto" width="480" autoplay controls>
+              <source src="public/MAMadero.mp4" type="video/mp4" />
+            </video>
+            <video id="trece" preload="auto" width="480" autoplay controls>
+              <source src="public/MAMadero.mp4" type="video/mp4" />
+            </video>
+            <!-- <video
+              id="catorce"
+              preload="auto"
+              width="360"
+              height="640"
+              controls
+            >
+              <source
+                src="public/LAAA_scrotumHumanum_000.mp4"
+                type="video/mp4"
+              />
+            </video> -->
+            <video id="quince" preload="auto" width="540" controls>
+              <source src="public/assimilation_bogota.mp4" type="video/mp4" />
+            </video>
+          </span>
+        </body>
+
+        <!-- Mirrored from www.nmenos1.xyz/public/expo/expo/2 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Jul 2022 02:21:10 GMT -->
+      </html>
+    </div>
+  </body>
+</html>
+
+<script>
+  uno1.addEventListener('loadedmetadata', function () {
+    if (uno1.buffered.length === 0) return;
+
+    var bufferedSeconds = uno1.buffered.end(0) - uno1.buffered.start(0);
+    console.log(bufferedSeconds + ' seconds of video are ready to play! (uno)');
+  });
+
+  tres.addEventListener('loadedmetadata', function () {
+    if (tres.buffered.length === 0) return;
+
+    var bufferedSeconds = tres.buffered.end(0) - tres.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (tres)'
+    );
+  });
+
+  cuatro.addEventListener('loadedmetadata', function () {
+    if (cuatro.buffered.length === 0) return;
+
+    var bufferedSeconds = cuatro.buffered.end(0) - cuatro.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (cuatro)'
+    );
+  });
+
+  cinco.addEventListener('loadedmetadata', function () {
+    if (cinco.buffered.length === 0) return;
+
+    var bufferedSeconds = cinco.buffered.end(0) - cinco.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (cinco)'
+    );
+  });
+
+  seis.addEventListener('loadedmetadata', function () {
+    if (seis.buffered.length === 0) return;
+
+    var bufferedSeconds = seis.buffered.end(0) - seis.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (seis)'
+    );
+  });
+
+  siete.addEventListener('loadedmetadata', function () {
+    if (siete.buffered.length === 0) return;
+
+    var bufferedSeconds = siete.buffered.end(0) - siete.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (siete)'
+    );
+  });
+
+  ocho.addEventListener('loadedmetadata', function () {
+    if (ocho.buffered.length === 0) return;
+
+    var bufferedSeconds = ocho.buffered.end(0) - ocho.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (ocho)'
+    );
+  });
+
+  nueve.addEventListener('loadedmetadata', function () {
+    if (nueve.buffered.length === 0) return;
+
+    var bufferedSeconds = nueve.buffered.end(0) - nueve.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (nueve)'
+    );
+  });
+
+  diez.addEventListener('loadedmetadata', function () {
+    if (diez.buffered.length === 0) return;
+
+    var bufferedSeconds = diez.buffered.end(0) - diez.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (diez)'
+    );
+  });
+
+  once.addEventListener('loadedmetadata', function () {
+    if (once.buffered.length === 0) return;
+
+    var bufferedSeconds = once.buffered.end(0) - once.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (once)'
+    );
+  });
+
+  doce.addEventListener('loadedmetadata', function () {
+    if (doce.buffered.length === 0) return;
+
+    var bufferedSeconds = doce.buffered.end(0) - doce.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (doce)'
+    );
+  });
+
+  trece.addEventListener('loadedmetadata', function () {
+    if (trece.buffered.length === 0) return;
+
+    var bufferedSeconds = trece.buffered.end(0) - trece.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (trece)'
+    );
+  });
+
+  catorce.addEventListener('loadedmetadata', function () {
+    if (catorce.buffered.length === 0) return;
+
+    var bufferedSeconds = catorce.buffered.end(0) - catorce.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (catorce)'
+    );
+  });
+
+  quince.addEventListener('loadedmetadata', function () {
+    if (quince.buffered.length === 0) return;
+
+    var bufferedSeconds = quince.buffered.end(0) - quince.buffered.start(0);
+    console.log(
+      bufferedSeconds + ' seconds of video are ready to play! (quince)'
+    );
+  });
+</script>
+enecccctlhhblhtndglrjkkdebibbgrdhdflvvdurikk

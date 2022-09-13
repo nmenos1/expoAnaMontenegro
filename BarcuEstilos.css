@@ -1,0 +1,701 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*Contenido general*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /*background-color: #ccff00;*/
+  background-color: whitesmoke;
+  /*background-image: url("fondo1.png");*/
+  color: black;
+  font-family: "kanit", sans-serif;
+}
+
+.titulo {
+  width: fit-content;
+  position: fixed;
+  top: 0.5%;
+  left: 3%;
+  line-height: 1;
+  z-index: 7;
+}
+
+.titulo h1 {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 12vw;
+  text-shadow: 3px 1px 10px gray;
+  min-height: 50px;
+  text-decoration: none;
+}
+
+.mapa h2 a {
+  text-decoration: none;
+  font-family: "kanit", sans-serif;
+  font-weight: 400;
+  font-size: 2vw;
+  position: fixed;
+  right: 0.5%;
+  top: 1%;
+  color: black;
+  z-index: 5;
+}
+
+.mapa h2 a:hover {
+  text-shadow: 3px 1px 10px #ccff00;
+}
+
+#mapanav {
+  /*visibility: hidden;*/
+  display: none;
+  width: 100%;
+  min-height: 11500px;
+  background-color: rgb(204, 255, 0, 0.6);
+  z-index: 6;
+  position: absolute;
+  font-family: "kanit", sans-serif;
+}
+
+#mapanav span {
+  opacity: 1;
+  z-index: 6;
+  color: black;
+  text-shadow: 1px 1px 3px whitesmoke;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "kanit", sans-serif;
+}
+
+.contenedorp {
+  width: 100%;
+  top: 5%;
+  z-index: 1;
+}
+
+#CuadroTexto {
+  width: 40%;
+  display: inline-block;
+  position: absolute;
+  overflow-y: scroll;
+  top: 60%;
+  left: 10%;
+  height: 30%;
+  font-family: "Kanit", Sans-serif;
+  font-size: 1.6vw;
+  z-index: 2;
+  border: solid 2px #ccff00;
+  padding: 1%;
+  /*text-shadow: 3px 1px 10px gray;*/
+}
+
+.obras {
+  width: 100%;
+  min-height: 50%;
+  display: inline-block;
+  z-index: 2;
+}
+
+.obras #cero video {
+  display: inline-block;
+  position: relative;
+  margin-right: 8%;
+  margin-left: 65%;
+  margin-top: 20%;
+  z-index: 4;
+  box-shadow: 3px 3px 10px black;
+}
+
+.obras #uno video {
+  display: inline-block;
+  position: relative;
+  margin-right: 8%;
+  margin-left: 40%;
+  margin-top: 20%;
+  z-index: 4;
+  box-shadow: 3px 3px 10px black;
+}
+
+.obras #dos video {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: 3px 3px 10px black;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.obras #tres {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: 3px 4px 10px black;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  margin-left: 15%;
+}
+
+.obras #cuatro {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 20%;
+  margin-bottom: 20%;
+}
+
+.obras #cinco {
+  display: block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 25%;
+  margin-left: 30%;
+  margin-bottom: 5%;
+}
+
+.obras #seis {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.obras #siete {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 40%;
+  margin-left: 30%;
+}
+
+.obras #ocho {
+  display: block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.obras #nueve {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.obras #diez {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 30%;
+}
+
+.obras #once {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 2%;
+}
+
+.obras #doce {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 0.5%;
+}
+
+.obras #trece {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 0.5%;
+}
+
+.obras #catorce {
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: 30%;
+}
+
+.obras #quince {
+  display: block;
+  position: relative;
+  z-index: 4;
+  box-shadow: -3px 4px 10px black;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20%;
+}
+
+/*#mapanav {
+  visibility: visible;
+}*/
+
+#mapanav .ana {
+  margin-left: 60%;
+  margin-top: 20%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .debora {
+  margin-left: 35%;
+  margin-top: 58%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .julieta {
+  margin-left: 10%;
+  margin-top: 52%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .moises {
+  margin-left: 15%;
+  margin-top: 15%;
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+#mapanav .biarritz {
+  margin-left: 20%;
+  margin-top: 53%;
+  position: relative;
+  display: inline-block;
+  width: auto;
+}
+
+#mapanav .surabhi {
+  margin-left: 30%;
+  margin-top: 80%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .jose {
+  margin-left: 10%;
+  margin-top: 75%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .madero {
+  margin-left: 10%;
+  margin-top: 100%;
+  padding-top: 83%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .wimpy {
+  margin-left: 30%;
+  margin-top: 70%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .gabriella {
+  margin-left: 32%;
+  margin-top: 59%;
+  position: relative;
+  display: block;
+}
+
+#mapanav .gapbetween {
+  margin-left: 30%;
+  margin-top: 103.5%;
+  position: relative;
+  display: block;
+}
+
+/*Mediaqueries para móvil*/
+
+@media screen and (max-width: 800px) {
+  .titulo h1 {
+    font-size: 30vw;
+  }
+
+  .mapa h2 a {
+    font-size: 9vw;
+  }
+
+  #mapanav {
+    width: 100%;
+    min-height: 2800px;
+  }
+
+  .contenedorp {
+    display: block;
+    width: 100%;
+  }
+
+  .contenedorp #CuadroTexto {
+    width: 80%;
+    height: 200px;
+    display: block;
+    margin-left: 2%;
+    margin-right: 9%;
+    z-index: 4;
+    font-size: 4vw;
+    text-align: left;
+    position: relative;
+    margin-top: 40%;
+    overflow-y: scroll;
+  }
+
+  .obras {
+    display: block;
+    width: 100%;
+  }
+
+  .obras #cero video {
+    width: 240px;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20%;
+  }
+
+  .obras #uno video {
+    width: 240px;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20%;
+  }
+
+  .obras #dos video {
+    display: block;
+    width: 95%;
+    margin-top: 20%;
+    margin-left: 2%;
+  }
+
+  .obras #tres {
+    width: 48%;
+    z-index: 4;
+    box-shadow: 3px 4px 10px black;
+    margin-left: 1%;
+  }
+
+  .obras #cuatro {
+    width: 48%;
+    z-index: 4;
+    box-shadow: 3px 4px 10px black;
+    margin-left: 1%;
+  }
+
+  .obras #cinco {
+    width: 100%;
+    margin-left: 0%;
+    margin-bottom: 5%;
+  }
+
+  .obras #seis {
+    display: inline-block;
+    position: relative;
+    z-index: 4;
+    width: 48%;
+    height: auto;
+    margin-left: 0%;
+  }
+
+  .obras #siete {
+    display: inline-block;
+    position: relative;
+    width: 48%;
+    height: auto;
+    margin-top: 20%;
+    margin-left: 0%;
+  }
+
+  .obras #ocho {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+
+  .obras #nueve {
+    width: 48%;
+    height: auto;
+    margin-left: 0%;
+  }
+
+  .obras #diez {
+    width: 48%;
+    height: auto;
+    margin-left: 0%;
+  }
+
+  .obras #once {
+    display: block;
+    margin-top: 20%;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .obras #doce {
+    visibility: hidden;
+    display: none;
+  }
+
+  .obras #trece {
+    visibility: hidden;
+    display: none;
+  }
+
+  .obras #catorce {
+    display: block;
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .obras #quince {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20%;
+  }
+
+	#mapanav .ana {
+	  margin-left: 5%;
+	  margin-top: 65%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .debora {
+	  margin-left: 5%;
+	  margin-top: 103%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .julieta {
+	  margin-left: 5%;
+	  margin-top: 108%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .moises {
+	  margin-left: 1%;
+	  margin-top: 55%;
+	  position: relative;
+	  display: inline-block;
+	  width: auto;
+	}
+	
+	#mapanav .biarritz {
+	  margin-left: 30%;
+	  margin-top: 45%;
+	  position: relative;
+	  display: inline-block;
+	  width: auto;
+	  text-align: right;
+	}
+	
+	#mapanav .surabhi {
+	  margin-left: 5%;
+	  margin-top: 50%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .jose {
+	  margin-left: 5%;
+	  margin-top: 65%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .madero {
+	  margin-left: 5%;
+	  margin-top: 230%;
+	  padding-top: 70%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .wimpy {
+	  margin-left: 5%;
+	  margin-top: 180%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .gabriella {
+	  margin-left: 5%;
+	  margin-top: 138%;
+	  position: relative;
+	  display: block;
+	}
+	
+	#mapanav .gapbetween {
+	  margin-left: 5%;
+	  margin-top: 103.5%;
+	  position: relative;
+	  display: block;
+	}
+}
